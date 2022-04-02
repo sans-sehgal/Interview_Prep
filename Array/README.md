@@ -3,18 +3,34 @@
 1) How to pass a 2D array to function by value or by ref? <br>
  https://stackoverflow.com/questions/8767166/passing-a-2d-array-to-a-c-function
 
-2) In vector <br>
+2) In vector: <br>
 → largest element is: *max_element(nums.begin() , nums.end()); <br>
 → smallest element is *min_element(nums.begin() , nums.end());
 
-3) to sort any array or vector <br>
+3) to sort any array or vector: <br>
 → sort(arr, arr+n); <br>
-→sort(nums.begin(), nums.end());
+→ sort(nums.begin(), nums.end());
 
-4) Kedane’s algorithm for largest sum of contiguous array elements. <br>
+4) Passing comparator to sort function: <br>
+```
+    bool comperator(int a ,int b)
+    {
+        return a > b;
+    }
+    void merge(vector<int>& intervals) 
+    {
+        sort(intervals.begin() , intervals.end() , comperator);
+        // sort function will now sort in descending order. 
+    }
+```
+
+5) To reverse a vector: <br>
+-> reverse(m.begin() , m.end());
+
+6) Kedane’s algorithm for largest sum of contiguous array elements. <br>
 https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/#
 ```
- int maxSubArray(vector<int>& nums) 
+    int maxSubArray(vector<int>& nums) 
     {
         int sum = 0;
         int largest_sum = 0;
@@ -31,7 +47,7 @@ https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/#
         return largest_sum;
     }
 ```
-5) Sieve of Eratosthenes
+7) Sieve of Eratosthenes
 ```
     int countPrimes(int n) 
     {
@@ -63,7 +79,9 @@ https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/#
     }
     
 ```
+ 
+
 ### Important Questions
--> https://www.interviewbit.com/problems/flip/
+* https://www.interviewbit.com/problems/flip/
 
 
