@@ -31,7 +31,39 @@ https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/#
         return largest_sum;
     }
 ```
+5) Sieve of Eratosthenes
+```
+    int countPrimes(int n) 
+    {
+        if (n == 0 || n == 1)
+        {
+            return 0;
+        }
+        int arr[n];
+        int count = 0;
+        for(int i=0; i<n; i++)
+            arr[i] = 1;
+        arr[0] = 0;
+        arr[1] = 0;
+        for (int i=2; i<n; i++)
+        {
+            if(arr[i]==1)
+            {
+                for(int j=2; i*j<n; j++)
+                {
+                    arr[j*i] = 0;
+                }
+            }
+
+        }
+        for(int i=0; i<n; i++)
+            if(arr[i] == 1)
+                count++;
+    return count;
+    }
+    
+```
 ### Important Questions
-https://www.interviewbit.com/problems/flip/
+-> https://www.interviewbit.com/problems/flip/
 
 
