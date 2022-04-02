@@ -1,6 +1,6 @@
 ## Arrays – Important notes and Questions
 
-1) How to pass a 2D array to function by value or by ref?
+1) How to pass a 2D array to function by value or by ref? <br>
  https://stackoverflow.com/questions/8767166/passing-a-2d-array-to-a-c-function
 
 2) In vector → largest element is: *max_element(nums.begin() , nums.end());
@@ -9,7 +9,7 @@
 3) to sort any array or vector → sort(arr, arr+n);
 			           →sort(nums.begin(), nums.end());
 
-4) Kedane’s algorithm for largest sum of contiguous array elements.
+4) Kedane’s algorithm for largest sum of contiguous array elements. <br>
 https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/#
 ```
  int maxSubArray(vector<int>& nums) 
@@ -29,6 +29,7 @@ https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/#
         return largest_sum;
     }
 ```
+### Important Questions
 https://www.interviewbit.com/problems/flip/
 
 
