@@ -5,7 +5,9 @@
 
 2) In vector: <br>
 → largest element is: *max_element(nums.begin() , nums.end()); <br>
-→ smallest element is *min_element(nums.begin() , nums.end());
+→ smallest element is *min_element(nums.begin() , nums.end()); <br>
+-> last element is given by nums.back();
+
 
 3) to sort any array or vector: <br>
 → sort(arr, arr+n); <br>
