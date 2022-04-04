@@ -79,7 +79,87 @@ https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/#
     }
     
 ```
- 
+ 8) Insertion Sort
+```
+     //Pseudo Code
+     INSERTION-SORT(A)
+       for i = 1 to n
+        key ← A [i]
+            j ← i – 1
+         while j > = 0 and A[j] > key
+            A[j+1] ← A[j]
+            j ← j – 1
+        End while 
+        A[j+1] ← key
+      End for 
+ ```
+ ```
+     void insertionSort(int *arr , int n)
+    {
+        for(int i=1; i<n; i++)
+        {
+            int key = arr[i];
+            int j = i-1;
+            while(j>=0 && arr[j] > key)
+            {
+                arr[j+1] = arr[j];
+                j--;            
+            }
+            arr[j+1] = key;
+        }
+    }
+ ```
+9) Merge Sort 
+```
+    void merge(int *arr, int start , int mid, int end)
+    {
+        int temp[end-start+1];
+        int i = start, j=mid+1;
+        int k=0;
+        while(i<=mid && j<=end)
+        {
+            if(arr[i] < arr[j])
+            {
+                temp[k] = arr[i];
+                i++;
+                k++;
+            }
+            else if(arr[i] > arr[j])
+            {
+                temp[k] = arr[j];
+                k++;
+                j++;
+            }
+        }
+
+        while(i <= mid)
+        {
+            temp[k] = arr[i];
+            k++;
+            i++;
+        }
+
+        while(j <= end)
+        {
+            temp[k] = arr[j];
+            k++;
+            j++;
+        }
+        for(int i=start; i<=end; i++)
+            arr[i] = temp[i-start];
+    }
+
+    void merge_sort(int *arr, int start, int end)
+    {
+        if(start < end)
+        {
+            int mid = (start + end) / 2;
+            merge_sort(arr , start , mid);
+            merge_sort(arr , mid+1 , end);
+            merge(arr, start, mid, end);
+        }
+    }
+```
 
 ### Important Questions
 * https://www.interviewbit.com/problems/flip/
