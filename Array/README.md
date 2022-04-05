@@ -113,6 +113,8 @@ https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/#
  ```
 9) Merge Sort 
 ```
+    // this function just merges two arrays, remember merging sorted LL's
+
     void merge(int *arr, int start , int mid, int end)
     {
         int temp[end-start+1];
@@ -162,7 +164,48 @@ https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/#
         }
     }
 ```
+10) Quicksort 
+```
+    /**
+    * The function selects the last element as pivot element, places that pivot element correctly in the array in such a way
+    * that all the elements to the left of the pivot are lesser than the pivot and
+    * all the elements to the right of pivot are greater than it.
+    * @Parameters: array, starting index and ending index
+    * @Returns: index of pivot element after placing it correctly in sorted array
+    */
+    partition (arr[], low, high)
+    {
+        // pivot - Element at right most position
+        pivot = arr[high];  
+        i = (low - 1);  // Index of smaller element
+        for (j = low; j <= high-1; j++)
+        {
+            // If current element is smaller than the pivot, swap the element with pivot
+            if (arr[j] < pivot)
+            {
+                i++;    // increment index of smaller element
+                swap(arr[i], arr[j]);
+            }
+        }
+        swap(arr[i + 1], arr[high]);
+        return (i + 1);
+    }
+    /**
+    * The main function that implements quick sort.
+    * @Parameters: array, starting index and ending index
+    */
+    quickSort(arr[], low, high)
+    {
+        if (low < high)
+        {
+            // pivot_index is partitioning index, arr[pivot_index] is now at correct place in sorted array
+            pivot_index = partition(arr, low, high);
 
+            quickSort(arr, low, pivot_index - 1);  // Before pivot_index
+            quickSort(arr, pivot_index + 1, high); // After pivot_index
+        }
+    }
+```
 ### Important Questions
 * https://www.interviewbit.com/problems/flip/
 

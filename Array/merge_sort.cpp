@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// this function just merges two arrays, remember merging sorted LL's
 void merge(int *arr, int start , int mid, int end)
 {
 	int temp[end-start+1];
