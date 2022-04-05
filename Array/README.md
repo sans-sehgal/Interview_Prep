@@ -85,10 +85,10 @@ https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/#
 ```
      //Pseudo Code
      INSERTION-SORT(A)
-       for i = 1 to n
+     for i = 1 to n
         key ← A [i]
-            j ← i – 1
-         while j > = 0 and A[j] > key
+        j ← i – 1
+        while j > = 0 and A[j] > key
             A[j+1] ← A[j]
             j ← j – 1
         End while 
@@ -205,6 +205,26 @@ https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/#
             quickSort(arr, pivot_index + 1, high); // After pivot_index
         }
     }
+```
+11) Quick Sort 
+```
+    FindMinIndex(Arr[], start, end)    
+        min_index = start    
+        FOR i from (start + 1) to end:    
+            IF Arr[i] < Arr[min_index]:    
+                min_index = i    
+            END of IF    
+        END of FOR        
+        Return min_index
+
+    SelectionSort(Arr[], arr_size):    
+        FOR i from 1 to arr_size:    
+            min_index = FindMinIndex(Arr, i, arr_size)    
+        
+            IF i != min_index:    
+                swap(Arr[i], Arr[min_index])    
+            END of IF    
+        END of FOR
 ```
 ### Important Questions
 * https://www.interviewbit.com/problems/flip/
