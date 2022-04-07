@@ -206,7 +206,7 @@ https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/#
         }
     }
 ```
-11) Quick Sort 
+11) Selection Sort
 ```
     FindMinIndex(Arr[], start, end)    
         min_index = start    
@@ -228,5 +228,7 @@ https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/#
 ```
 ### Important Questions
 * https://www.interviewbit.com/problems/flip/
+* https://www.codingninjas.com/codestudio/problems/count-inversions_615?leftPanelTab=0
+
 
 
