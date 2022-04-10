@@ -22,14 +22,19 @@ long long merge(long long * arr, int start, int mid, int end)
     	
     }
 		while(i<=mid)
-           { temp[k] = arr[i];
+        { 
+            temp[k] = arr[i];
     		k++;
-    		i++;}
+    		i++;
+        }
     
     	while(j<=end)
-            {temp[k] = arr[j];
+        {
+            temp[k] = arr[j];
             k++;
-            j++;}
+            j++;
+        }
+        
 	for(int i=start; i<=end; i++)
         arr[i] = temp[i-start];
     return inv_count;
