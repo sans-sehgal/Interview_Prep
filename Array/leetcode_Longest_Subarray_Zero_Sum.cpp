@@ -25,7 +25,7 @@ int LongestSubsetWithZeroSum(vector < int > arr)
 	return abs_ma==0 ?  0 :  abs_ma;
 }
 
-// much better silution 
+// much better solution 
 #include <unordered_map>
 int LongestSubsetWithZeroSum(vector < int > arr) 
 {

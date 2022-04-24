@@ -248,6 +248,8 @@ int majorityElement(vector<int>& v)
     return major_elem;
 }
 ```
+13) In questions regarding counting of number of subarrays, use the concepts of prefix array. 
+
 ### Important Questions
 * https://www.interviewbit.com/problems/flip/
 * https://www.codingninjas.com/codestudio/problems/count-inversions_615?leftPanelTab=0
