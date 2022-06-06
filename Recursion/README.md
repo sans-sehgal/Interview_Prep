@@ -18,17 +18,57 @@ void sub_sets(int id, vector <int> nums, vector<vector<int>> &subset, vector <in
 
     for(int i=id; i<nums.size(); i++)
     {
-        // if(i!=id && nums[i] == nums[i-1] ) continue;
         subs.push_back(nums[i]);
         sub_sets(i+1, nums, subset, subs);
         subs.pop_back();
     }
 }
 
-To call: sub_sets(0,nums,subset,subs);
+Input: [1,2,2]
 
-Input: [1,2,3]
+Output: [[],[1],[1,2],[1,2,2],[1,2],[2],[2,2],[2]]
 
-Output: [[],[1],[1,2],[1,2,3],[1,3],[2],[2,3],[3]]
+Note: Notice that similar elements leads to same subsets being printed multiple times.
 
 ```
+6) code to generate all unique subsets : 
+```
+void sub_sets(int id, vector <int> nums, vector<vector<int>> &subset, vector <int> subs)
+{
+  
+    subset.push_back(subs);
+
+    for(int i=id; i<nums.size(); i++)
+    {
+        if(i!=id && nums[i] == nums[i-1] ) continue;
+        subs.push_back(nums[i]);
+        sub_sets(i+1, nums, subset, subs);
+        subs.pop_back();
+    }
+}
+
+Input: [1,2,2]
+
+Output: [[],[1],[1,2],[1,2,2],[2],[2,2]]
+
+```
+7) Code to generate subsets using pick/ not-pick technique :
+```
+void subset(int id, int N, vector <int> subarray, vector<int> arr, vector<int> &ans)
+{
+    if(id>=N)
+    {
+        ans.push_back(subarray);
+        return;
+    }
+    subarray.push_back(arr[id]);
+    subset(id+1, N , subarray, arr, ans);
+    subset.pop_back();
+    sub_sum(id+1, N , subarray, arr, ans);
+}
+
+Input: [1,2,2]
+
+Output: [[],[1],[1,2],[1,2,2],[1,2],[2],[2,2],[2]]
+```
+
