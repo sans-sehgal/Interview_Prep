@@ -6,3 +6,9 @@
 
 3) For tabulation, just copy the memoized code with all the constraints. <br> 
 
+4) Multiple types of Porblems. <br>
+  a) DP on Grids <br>
+  b) DP on strings <br>
+  c) DP on subsequences <br> 
+  
+Each type of problems has been labelled, so catch up on atleast one of each type before the interview! 
