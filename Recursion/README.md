@@ -52,7 +52,7 @@ Input: [1,2,2]
 Output: [[],[1],[1,2],[1,2,2],[2],[2,2]]
 
 ```
-7) Code to generate subsets using pick/ not-pick technique :
+7) Code to generate subsets using pick/not-pick technique :
 ```
 void subset(int id, int N, vector <int> subarray, vector<int> arr, vector<int> &ans)
 {
