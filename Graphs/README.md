@@ -148,4 +148,41 @@ int main() {
 }
 ```
 
-4) Code for cycle detection in present in the files uploaded, have a look for both BFS and DFS. 
+4) Code for cycle detection is present in the files uploaded, have a look for both BFS and DFS. For both directed and undirected graphs. <br>
+
+5) Topoogical Sorting: Linear ordering of vertices such that if there is an edge between u->v, 'u' appears before 'v' in that ordering. Ofcourse, this can only be done for directed graphs <br>
+```
+// Code for topological sort DFS
+
+void topoSort(int node, vector<int> &vis, stack<int> &st, map<int,vector<int> >mp)
+{
+    vis[node] = 1;
+
+    for(auto i:mp[node])
+    {
+        if(!vis[i])
+            topoSort(i,vis,st,mp);
+    }
+
+    st.push(node);
+}
+
+int main() 
+{
+    map <int , vector <int> > mp;
+    int V, E;
+    cin>>V>>E;
+    vector <int> vis (V+1 , 0);
+    stack <int> st;
+    for(int i=1; i<=V; i++)
+    {
+        if(!vis[i])
+            topoSort(i, vis, st, mp);
+    }
+    while(!st.empty())
+    {
+        cout<<st.top()<<" ";
+        st.pop();
+    }
+}
+```

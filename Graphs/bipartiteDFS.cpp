@@ -2,14 +2,13 @@
 using namespace std;
 
 
-bool bipartite(int node, int curr_color, map<int,vector<int>> mp, vector<int> &color)
+bool bipartite(int node, int curr_color, map<int,vector<int> > mp, vector<int> &color)
 {
 	color[node] = curr_color;
 	for(auto i : mp[node])
 	{
 		if(color[i] == -1)
-			return if(!bipartite(i, !curr_color, mp, color)) return false; //this is an important an necessary condition you cant just 
-																			// return the function  
+            if(!bipartite(i, !curr_color, mp, color)) return false; 
 		else if(color[i] == curr_color)
 			return false;
 	}
@@ -17,7 +16,7 @@ bool bipartite(int node, int curr_color, map<int,vector<int>> mp, vector<int> &c
 }
 
 int main() {
-    map <int , vector <int>> mp;
+    map <int , vector <int> > mp;
     int V, E;
     cin>>V>>E;
     for(int i=0; i<E; i++)
