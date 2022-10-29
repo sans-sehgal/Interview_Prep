@@ -115,36 +115,37 @@ int main()
 ```
 // Checking Bipartite using DFS
 
-bool bipartite(int node, int curr_color, map<int,vector<int>> mp, vector<int> &color)
+bool checkBipartiteDFS(int node, vector<vector<int>> graph, vector<int> &color, int prev_color)
 {
-    color[node] = curr_color;
-    for(auto i : mp[node])
+    prev_color = 1 - prev_color;
+    color[node] = prev_color;
+    for(auto i : graph[node])
     {
         if(color[i] == -1)
-            return if(!bipartite(i, !curr_color, mp, color)) return false; //this is an important an necessary condition you cant just 
-                                                                            // return the function  
-        else if(color[i] == curr_color)
+            if(checkBipartiteDFS(i, graph, color, prev_color) == false) return false;
+        if(color[i] == color[node])
+        {
             return false;
+        }
     }
     return true;
 }
 
-int main() {
-    map <int , vector <int>> mp;
-    int V, E;
-    
-    vector<int> color(V+1, -1);
-    for(int i=1; i<=V; i++)
+
+bool isBipartite(vector<vector<int>>& graph) 
+{
+    vector<int> color(graph.size(), -1);
+    int prev_color = 1;
+    bool ans = true;
+    for(int i=0; i<graph.size(); i++)
     {
-        if(color[i] == -1)
-            if(!bipartite(i, 0, mp, color))
-            {
-                cout<<"false";
-                return 0;
-            }
+        if(color[i] == -1 && checkBipartiteDFS(i, graph, color, prev_color) == false)
+            return false;
     }
-    cout<<"true";
-    return 0;
+    for(auto i:color)
+        cout<<i<<" ";
+    cout<<endl;
+    return true;
 }
 ```
 
