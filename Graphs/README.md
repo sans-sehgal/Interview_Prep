@@ -69,48 +69,43 @@ int main()
 ```
 // Checking bipartite using BFS
 
-bool bipartite(int node, map<int,vector<int>> mp, int V, vector<int> &color)
+bool bfs(int node, vector<vector<int>> graph, vector<int> &color, int curr_color)
 {
     queue<int> q;
-    color[node] = 0;
     q.push(node);
+    color[node] = curr_color;
     while(!q.empty())
     {
-        int front = q.front();
+        int n = q.front();
         q.pop();
-
-        for(auto i:mp[front])
+        curr_color = color[n];
+        for(auto i : graph[n])
         {
-            int prev_color = color[front];
             if(color[i] == -1)
             {
-                color[i] = !(prev_color);
+                color[i] = 1 - curr_color;
                 q.push(i);
             }
-            else if(color[i] == prev_color)
+            else if(color[i] == color[n])
                 return false;
         }
     }
     return true;
 }
 
-int main() 
+
+bool isBipartite(vector<vector<int>>& graph) 
 {
-    map <int , vector <int>> mp;
-    int V, E;
-    cin>>V>>E;
-    vector <color> (V , -1);
-    for(int i=1; i<=V; i++)
+    vector<int> color(graph.size(), -1);
+    int curr_color = 0;
+    for(int i=0; i<graph.size(); i++)
     {
-        if(color[i] == -1)
-            if(!bipartite(i, mp, V, color))
-            {
-                cout<<"false";
-                return 0;
-            }
+        if(color[i] == -1 && !bfs(i, graph, color, curr_color))
+            return false;
     }
-    cout<<"true";
+    return true;
 }
+
 ```
 ```
 // Checking Bipartite using DFS
