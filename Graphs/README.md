@@ -182,3 +182,51 @@ int main()
     }
 }
 ```
+```
+//code for topological sort using BFS. This is also called kahns algo. 
+
+int main() 
+{
+    map <int , vector <int> > mp;
+    int V, E;
+    cin>>V>>E;
+    for(int i=0; i<E; i++)
+    {
+        int v1,v2;
+        cin>>v1>>v2;
+        mp[v1].push_back(v2);
+    }
+	for(auto i : mp)
+    {
+        cout<<i.first<<"->";
+        for(auto j : i.second)
+            cout<<j<<", ";
+        cout<<endl;
+    }
+    vector <int> vis (V+1 , 0);
+    vector<int> indegree(V+1);
+    vector <int> topo;
+    queue <int> q;
+    for(int i=1; i<=V; i++)
+    {
+        for(auto j : mp[i])
+            indegree[j]++;
+    }
+    for(int i=1; i<=V; i++)
+        if(indegree[i] == 0)
+            q.push(i);
+    while(!q.empty())
+    {
+        int node = q.front();
+        q.pop();
+        topo.push_back(node);
+        for(auto i :mp[node])
+        {
+            indegree[i]--;
+            if(indegree[i] == 0)
+                q.push(i);
+        }
+    }
+}
+
+```
