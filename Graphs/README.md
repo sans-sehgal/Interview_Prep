@@ -1,6 +1,18 @@
 ## Graphs – Important notes and Questions
 
-1) Most important algo, BFS. 
+### What you need to cover: 
+➡️ BFS, DFS AND THEIR IMPLMENTATIONS <br>
+➡️ SHORTEST DISTANCE IN UNDIRECTED GRAPH <br>
+	* Create a dist array, initialize to INT_MAX, in each iteration of bfs or dfs, comapre dist[i] with dist[node+1]. if latter is smaller, change dist[i] and push into queue or call dfs on the node <br>
+➡️ TOPOLOGICAL SORT USING BFS(KAHNS ALGO) AND DFS <br>
+	* For Kahns algo initialise an indegree array. Push node with indegree 0 into queue and do BFS, reducing indegree every iertation and adding to queue once indegree of any node becomes zero. For DFS use stack to topo sort. <br>
+➡️ BIPARTITE GRAPH USING BFS AND DFS <br>
+	* Use color array which doubles as visited array. <br>
+➡️ DETECT CYCLE IN UNDIRECTED GRAPH (BFS AND DFS) <br>
+➡️ DETECT CYCLE IN DIRECTED GRAPH (BFS AND DFS) <br>
+
+
+1) Most important algo, BFS.  <br>
 Fringe List: Queue. Works on a FIFO basis. 
 ```
 vector<int> bfs_graph(map<int, vector<int>> mp, int V)
