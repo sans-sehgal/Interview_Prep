@@ -9,6 +9,7 @@
 ➡️ BIPARTITE GRAPH USING BFS AND DFS <br>
 	* Use color array which doubles as visited array. <br>
 ➡️ DETECT CYCLE IN UNDIRECTED GRAPH (BFS AND DFS) <br>
+	* Along with node, pass parent of node. Compare if node's neighbours have been visited. If they have, then cycle exists. 
 ➡️ DETECT CYCLE IN DIRECTED GRAPH (BFS AND DFS) <br>
 
 
