@@ -13,7 +13,12 @@
 → sort(arr, arr+n); <br>
 → sort(nums.begin(), nums.end());
 
-4) Passing comparator to sort function: <br>
+For a priority queue to be in ascending order:
+```
+priority_queue<int, vector<int>, greater<int> >q;
+```
+
+5) Passing comparator to sort function: <br>
 ```
 bool comperator(int a ,int b)
 {
