@@ -7,13 +7,17 @@
 → largest element is: *max_element(nums.begin() , nums.end()); <br>
 → smallest element is *min_element(nums.begin() , nums.end()); <br>
 → last element is given by nums.back(); <br>
-→ to empty a vector, use nums.clear(); <br>
+→ to empty a vector, use nums.clear(); <be>
+→ to remove an element from a vector: -
+```
+nums.erase(nums.begin() + 5)
+```
 
-3) to sort any array or vector: <br>
+4) to sort any array or vector: <br>
 → sort(arr, arr+n); <br>
 → sort(nums.begin(), nums.end());
 
-For a priority queue to be in ascending order:
+→ For a priority queue to be in ascending order:
 ```
 priority_queue<int, vector<int>, greater<int> >q;
 ```
