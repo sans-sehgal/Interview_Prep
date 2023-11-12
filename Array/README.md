@@ -7,7 +7,7 @@
 → largest element is: *max_element(nums.begin() , nums.end()); <br>
 → smallest element is *min_element(nums.begin() , nums.end()); <br>
 → last element is given by nums.back(); <br>
-→ to empty a vector, use nums.clear(); <be>
+→ to empty a vector, use nums.clear(); <br>
 → to remove an element from a vector: -
 ```
 nums.erase(nums.begin() + 5)
